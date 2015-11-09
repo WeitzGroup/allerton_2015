@@ -1,0 +1,20 @@
+%!TEX root = Epidemics.tex
+
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+\usetikzlibrary{arrows,automata}
+
+
+
+\begin{tikzpicture}[->,>=stealth',auto,semithick,node distance=1cm]
+\tikzstyle{every state}=[fill=white,draw=black,thick,text=black,scale=.7]
+
+\node[state] at (0,0)  (A)  {\large$s_i = 1$};
+\node[state] at (3,0)  (B)  {\large$s_i = 0$};
+\path
+(A) edge[bend right]     node[below]{\small$\delta$}         (B) 
+(A) edge[loop left]              (A) 
+node at (-1.2,.5) {\small$1-\delta$}
+(B) edge[loop right]             (B) 
+ node[above] at (4.2,.3) {\small$1-p_{01}^i$}
+(B) edge[bend right]  node[above]{\small$p_{01}^i$} (A);
+\end{tikzpicture}

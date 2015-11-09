@@ -1,0 +1,18 @@
+%!TEX root = Epidemics.tex
+
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+\usetikzlibrary{arrows,automata}
+
+
+
+\begin{tikzpicture}[->,>=stealth',auto,semithick,node distance=1cm]
+\tikzstyle{state1}=[fill=white,draw=black,thick,text=black,scale=.7]
+\tikzstyle{state2}=[fill=white,draw=black,thick,text=black,scale=.7]
+\node[state1] at (0,0)  (A)  {\large SIS Dynamics};
+\node[state2] at (3,0)  (B)  {\large Agents};
+\path
+(A) edge[bend left]     node[above]{\small$s(t)$}         (B) 
+(B) edge[bend left]  node[below]{\small$\beta a(s(t))$} (A);
+\node[above] at (-.3,.2) {\footnotesize$t=t+1$};
+
+\end{tikzpicture}
